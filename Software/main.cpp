@@ -33,7 +33,7 @@ int main(void)
     HumiditySensor humidity(PA0);
     char mc[12];
     char dist[12];
-    volatile uint16_t distance;
+    volatile double distance;
     DistanceSensor distanceSensor;
 	while (true)
 	{
@@ -42,16 +42,16 @@ int main(void)
 	    led.string(26, 12, mc, 12, 0, led.screen);
 
 	    distance = distanceSensor.getDistance();
-	    sprintf(dist,"%4u",distance);
+	    sprintf(dist,"%4u",(uint8_t)distance);
 	    led.string(26, 36,dist, 12, 0, led.screen);
 
 	    led.show();
 
 		PORTD |= (1<<PD7);
-	    _delay_ms(33);
+	    _delay_ms(330);
 
 		PORTD &= ~(1<<PD7);
-	    _delay_ms(33);
+	    _delay_ms(330);
 	}
 }
 

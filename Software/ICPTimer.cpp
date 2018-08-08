@@ -26,7 +26,7 @@ ICPTimer::ICPTimer()
 		DDRD &= ~(1<<PD6);
 		PORTD &= ~(1<<PD6);
 		TCNT1 =0;
-		TCCR1B |= (1<<ICES1)| (1<<CS11);// preskaler 8
+		TCCR1B |= (1<<ICES1)| (1<<CS11) ;// preskaler 8
 		TIMSK |= (1<<TICIE1)| (1<<TOIE1);
 		sei();
 		initialized = true;
@@ -41,7 +41,7 @@ void ICPTimer::captureInterrupt()
 	case 1:
 		tick = 0;
 		captureStart = ICR1 ;
-		TCNT1 =0;
+		//TCNT1 =0;
 		TCCR1B &= ~(1<<ICES1);
 		edge = 0;
 		ready = false;
@@ -64,8 +64,7 @@ uint32_t ICPTimer::getTime()
 	while(!ready);
 
 	captureEnd += (endTick * 0xFFFF);
-	volatile uint16_t signalTime = captureEnd - captureStart;
-	signalTime/=2;
+	volatile uint32_t signalTime = (captureEnd - captureStart); //8 liczba us wyeksportowac do define
 
 	return signalTime;
 }

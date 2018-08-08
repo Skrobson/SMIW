@@ -17,7 +17,7 @@
 class DistanceSensor {
 public:
 	DistanceSensor();
-	uint16_t getDistance();
+	double getDistance();
 
 private:
 	ICPTimer timer;

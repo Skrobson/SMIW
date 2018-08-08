@@ -13,7 +13,7 @@ DistanceSensor::DistanceSensor(): DIVISOR(58) {
 	SENSOR_PORT &= ~(1<<TRIG_PIN);
 }
 
-uint16_t DistanceSensor::getDistance()
+double DistanceSensor::getDistance()
 {
 	SENSOR_PORT &= ~(1<<TRIG_PIN);
 	_delay_ms(2);
@@ -26,7 +26,8 @@ uint16_t DistanceSensor::getDistance()
 	if (echoTime>0)
 	{
 		volatile double distance = (double)(echoTime/58);
-		return round(distance);
+		//return round(distance);
+		return distance;
 	}
 	else return 0;
 }
