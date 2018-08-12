@@ -1,1 +1,0 @@
-avrdude.exe -e -P usb -c USBasp -p m32 -e -U "flash:w:D:\Code\Szkola\Projekt_SMIW\Software\szklarnia\szklarnia\Debug\szklarnia.hex:a"
