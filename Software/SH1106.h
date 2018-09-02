@@ -14,8 +14,8 @@
 #define HEIGHT   64
 #define NUM_PAGE  8
 
-#define PIN_DC				PB3	//
-#define PIN_RESET			PB2	//
+#define PIN_DC				PB2	//
+#define PIN_RESET			PB3	//
 #define PIN_CS				PB1//
 
 extern const uint8_t Waveshare12864[1024];
@@ -39,13 +39,15 @@ public:
 	uint8_t screen[8*128];
 	void bitmap(uint8_t x, uint8_t y, const uint8_t *pBmp, uint8_t chWidth, uint8_t chHeight, uint8_t* buffer);
 	void string(uint8_t x, uint8_t y, const char *pString, uint8_t Size, uint8_t Mode, uint8_t* buffer);
+	static void restart();
 private:
-	void writeCmd( uint8_t data);
-	void command(uint8_t data){writeCmd(data);}
+	static void writeCmd( uint8_t data);
+	static void command(uint8_t data){writeCmd(data);}
 	void pixel(int x, int y, char color, uint8_t* buffer);
 	void char1616(uint8_t x, uint8_t y, uint8_t chChar, uint8_t* buffer);
 	void char3216(uint8_t x, uint8_t y, uint8_t chChar, uint8_t* buffer);
 	void writeChar(uint8_t x, uint8_t y, uint8_t acsii, uint8_t size, uint8_t mode, uint8_t* buffer);
+
 
 	static bool initialized;
 };

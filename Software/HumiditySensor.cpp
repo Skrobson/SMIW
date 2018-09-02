@@ -7,14 +7,13 @@
 
 #include "HumiditySensor.h"
 
-HumiditySensor::HumiditySensor(uint8_t channel): AnalogSensor(channel)  {
-	// TODO Auto-generated constructor stub
+HumiditySensor::HumiditySensor(uint8_t channel): MAX_VALUE(1023),CHANNEL(channel)  {
 
 }
-uint8_t HumiditySensor::measure(const ADCReader& reader)
+volatile uint8_t HumiditySensor::measure( )
 {
-	volatile double percentageHumidity = (MAX_VALUE - reader.read(CHANNEL));
-	percentageHumidity /= MAX_VALUE;
+	volatile double percentageHumidity =(1023 - adc.read(CHANNEL));
+	percentageHumidity /= 1023;
 	percentageHumidity *= 100;
 	return uint8_t (percentageHumidity);
 }

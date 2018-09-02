@@ -5,32 +5,41 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../ADC.cpp \
-../AnalogSensor.cpp \
 ../DistanceSensor.cpp \
 ../HumiditySensor.cpp \
 ../ICPTimer.cpp \
 ../SH1106.cpp \
 ../SPI.cpp \
+../ScreenController.cpp \
+../WaterPump.cpp \
+../button.cpp \
+../dht.cpp \
 ../main.cpp 
 
 OBJS += \
 ./ADC.o \
-./AnalogSensor.o \
 ./DistanceSensor.o \
 ./HumiditySensor.o \
 ./ICPTimer.o \
 ./SH1106.o \
 ./SPI.o \
+./ScreenController.o \
+./WaterPump.o \
+./button.o \
+./dht.o \
 ./main.o 
 
 CPP_DEPS += \
 ./ADC.d \
-./AnalogSensor.d \
 ./DistanceSensor.d \
 ./HumiditySensor.d \
 ./ICPTimer.d \
 ./SH1106.d \
 ./SPI.d \
+./ScreenController.d \
+./WaterPump.d \
+./button.d \
+./dht.d \
 ./main.d 
 
 

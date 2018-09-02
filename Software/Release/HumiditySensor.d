@@ -1,8 +1,5 @@
-HumiditySensor.o: ../HumiditySensor.cpp ../HumiditySensor.h \
- ../AnalogSensor.h ../ADC.h
+HumiditySensor.o: ../HumiditySensor.cpp ../HumiditySensor.h ../ADC.h
 
 ../HumiditySensor.h:
-
-../AnalogSensor.h:
 
 ../ADC.h:

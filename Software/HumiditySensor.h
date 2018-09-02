@@ -7,14 +7,16 @@
 
 #ifndef HUMIDITYSENSOR_H_
 #define HUMIDITYSENSOR_H_
-
-#include "AnalogSensor.h"
 #include "ADC.h"
 
-class HumiditySensor: public AnalogSensor {
+class HumiditySensor{
 public:
 	HumiditySensor(uint8_t channel);
-	uint8_t measure(const ADCReader & reader);
+	volatile uint8_t measure( );
+private:
+	const uint16_t MAX_VALUE;
+	const uint8_t CHANNEL;
+	ADCReader adc;
 };
 
 #endif /* HUMIDITYSENSOR_H_ */

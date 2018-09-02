@@ -17,11 +17,10 @@
 class DistanceSensor {
 public:
 	DistanceSensor();
-	double getDistance();
+	float getDistance();
 
 private:
 	ICPTimer timer;
-	const uint8_t DIVISOR;
 };
 
 #endif /* DISTANCESENSOR_H_ */

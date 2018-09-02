@@ -18,6 +18,7 @@ volatile uint8_t ICPTimer::endTick = 0;
 const float ICPTimer::TIME_STEP = 0.5f;
 volatile bool ICPTimer::ready = false;
 volatile uint8_t ICPTimer::tick = 0;
+volatile uint32_t ICPTimer::signalTime = 0;
 
 ICPTimer::ICPTimer()
 {
@@ -25,7 +26,7 @@ ICPTimer::ICPTimer()
 	if (!initialized) {
 		DDRD &= ~(1<<PD6);
 		PORTD &= ~(1<<PD6);
-		TCNT1 =0;
+		//TCNT1 =0;
 		TCCR1B |= (1<<ICES1)| (1<<CS11) ;// preskaler 8
 		TIMSK |= (1<<TICIE1)| (1<<TOIE1);
 		sei();
@@ -41,7 +42,6 @@ void ICPTimer::captureInterrupt()
 	case 1:
 		tick = 0;
 		captureStart = ICR1 ;
-		//TCNT1 =0;
 		TCCR1B &= ~(1<<ICES1);
 		edge = 0;
 		ready = false;
@@ -52,20 +52,20 @@ void ICPTimer::captureInterrupt()
 		TCCR1B |= (1<<ICES1);
 
 		edge = 1;
-		ready = true;
+		calcSignal();
 		break;
 	default:
 		break;
 	}
 }
 
+void ICPTimer::calcSignal()
+{
+	volatile uint32_t endTime = captureEnd + (endTick * 0xFFFF);
+	signalTime = endTime - captureStart;
+}
 uint32_t ICPTimer::getTime()
 {
-	while(!ready);
-
-	captureEnd += (endTick * 0xFFFF);
-	volatile uint32_t signalTime = (captureEnd - captureStart); //8 liczba us wyeksportowac do define
-
 	return signalTime;
 }
 

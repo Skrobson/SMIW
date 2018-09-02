@@ -13,7 +13,7 @@ class ADCReader {
 public:
 	ADCReader();
 
-	uint16_t read(uint8_t channel)const;
+	uint16_t read(uint8_t channel);
 private:
 	static bool initialized;
 };

@@ -30,6 +30,8 @@ private:
 	static const float TIME_STEP;
 	volatile static bool ready ;
 
+	static void calcSignal();
+	volatile static uint32_t signalTime;
 };
 
 

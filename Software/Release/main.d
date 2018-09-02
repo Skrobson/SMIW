@@ -1,5 +1,6 @@
 main.o: ../main.cpp ../SH1106.h ../SPI.h ../ADC.h ../HumiditySensor.h \
- ../AnalogSensor.h ../DistanceSensor.h ../ICPTimer.h
+ ../DistanceSensor.h ../ICPTimer.h ../dht.h ../button.h \
+ ../ScreenController.h ../WaterPump.h
 
 ../SH1106.h:
 
@@ -9,8 +10,14 @@ main.o: ../main.cpp ../SH1106.h ../SPI.h ../ADC.h ../HumiditySensor.h \
 
 ../HumiditySensor.h:
 
-../AnalogSensor.h:
-
 ../DistanceSensor.h:
 
 ../ICPTimer.h:
+
+../dht.h:
+
+../button.h:
+
+../ScreenController.h:
+
+../WaterPump.h:

@@ -16,7 +16,15 @@ SH1106::SH1106() {
 	{
 		spiInitMaster();
 
-		DDRB |=(1<<PIN_CS);
+
+		restart();
+		initialized = true;
+	}
+}
+
+void SH1106::restart()
+{
+	DDRB |=(1<<PIN_CS);
 		DDRB |=(1<<PIN_DC);
 		DDRB |=(1<<PIN_RESET);
 
@@ -55,8 +63,6 @@ SH1106::SH1106() {
 		command(0xA6);// Disable Inverse Display On (0xa6/a7)
 		command(0xAF);//--turn on oled panel
 
-		initialized = true;
-	}
 }
 
 void SH1106::writeCmd(uint8_t data)
