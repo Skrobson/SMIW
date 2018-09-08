@@ -6,6 +6,7 @@
  */
 #include "ScreenController.h"
 #include "dht.h"
+#include "WaterPump.h"
 
 SH1106 screen = SH1106();
 char buff[5];
@@ -68,7 +69,10 @@ void showTankScreen( volatile float &distance)
 
 void updateTankScreen(volatile float &distance)
 {
-    sprintf(buff,"%4u",(uint8_t)(distance));
+
+	int8_t waterLevel = WATER_MIN_LEVEL - (distance);
+	if(waterLevel < WATER_MIN_LEVEL) waterLevel = 0;
+    sprintf(buff,"%4u",(uint8_t)waterLevel);
     screen.string(26, 24,buff, 12, 0, screen.screen);
 
     screen.show();
