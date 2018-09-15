@@ -8638,9 +8638,9 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <part name="V16" library="MAX9812" deviceset="GND" device=""/>
 <part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/15" package3d_urn="urn:adsk.eagle:package:23492/1" value="1k"/>
 <part name="IC4" library="atmel" library_urn="urn:adsk.eagle:library:105" deviceset="MEGA32-P" device="" package3d_urn="urn:adsk.eagle:package:4314/1"/>
-<part name="SV2" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA04-1" device="" package3d_urn="urn:adsk.eagle:package:8337/1"/>
+<part name="ODLEGŁOŚĆ" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA04-1" device="" package3d_urn="urn:adsk.eagle:package:8337/1"/>
 <part name="V13" library="MAX9812" deviceset="GND" device=""/>
-<part name="DHT1" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA03-1" device="" package3d_urn="urn:adsk.eagle:package:8339/1"/>
+<part name="BUTTONS" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA03-1" device="" package3d_urn="urn:adsk.eagle:package:8339/1"/>
 <part name="V14" library="MAX9812" deviceset="GND" device=""/>
 <part name="K1" library="relay" library_urn="urn:adsk.eagle:library:339" deviceset="JS-M1*" device="" package3d_urn="urn:adsk.eagle:package:24452/1" technology="-9V-4"/>
 <part name="V15" library="MAX9812" deviceset="GND" device=""/>
@@ -8696,9 +8696,9 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <instance part="V16" gate="GND" x="208.28" y="43.18"/>
 <instance part="R4" gate="G$1" x="33.02" y="101.6" rot="R90"/>
 <instance part="IC4" gate="G$1" x="68.58" y="50.8"/>
-<instance part="SV2" gate="1" x="175.26" y="114.3" rot="R270"/>
+<instance part="ODLEGŁOŚĆ" gate="1" x="175.26" y="114.3" rot="R270"/>
 <instance part="V13" gate="GND" x="187.96" y="116.84" rot="R180"/>
-<instance part="DHT1" gate="G$1" x="172.72" y="50.8" rot="R90"/>
+<instance part="BUTTONS" gate="G$1" x="172.72" y="50.8" rot="R90"/>
 <instance part="V14" gate="GND" x="167.64" y="63.5" rot="R270"/>
 <instance part="K1" gate="1" x="185.42" y="27.94"/>
 <instance part="K1" gate="2" x="203.2" y="27.94"/>
@@ -8782,7 +8782,7 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <pinref part="V13" gate="GND" pin="GND"/>
 <wire x1="187.96" y1="114.3" x2="187.96" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="187.96" y1="104.14" x2="177.8" y2="104.14" width="0.1524" layer="91"/>
-<pinref part="SV2" gate="1" pin="4"/>
+<pinref part="ODLEGŁOŚĆ" gate="1" pin="4"/>
 <wire x1="177.8" y1="104.14" x2="177.8" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -8792,7 +8792,7 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <wire x1="104.14" y1="2.54" x2="99.06" y2="2.54" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="DHT1" gate="G$1" pin="3"/>
+<pinref part="BUTTONS" gate="G$1" pin="3"/>
 <wire x1="170.18" y1="58.42" x2="170.18" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="V14" gate="GND" pin="GND"/>
 </segment>
@@ -8858,7 +8858,7 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <pinref part="P+12" gate="VCC" pin="VCC"/>
 <wire x1="162.56" y1="116.84" x2="162.56" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="162.56" y1="104.14" x2="170.18" y2="104.14" width="0.1524" layer="91"/>
-<pinref part="SV2" gate="1" pin="1"/>
+<pinref part="ODLEGŁOŚĆ" gate="1" pin="1"/>
 <wire x1="170.18" y1="104.14" x2="170.18" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -8992,7 +8992,7 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 </net>
 <net name="ECHO" class="0">
 <segment>
-<pinref part="SV2" gate="1" pin="3"/>
+<pinref part="ODLEGŁOŚĆ" gate="1" pin="3"/>
 <wire x1="175.26" y1="106.68" x2="175.26" y2="99.06" width="0.1524" layer="91"/>
 <label x="175.26" y="99.06" size="1.778" layer="95"/>
 </segment>
@@ -9003,7 +9003,7 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 </net>
 <net name="TRIG" class="0">
 <segment>
-<pinref part="SV2" gate="1" pin="2"/>
+<pinref part="ODLEGŁOŚĆ" gate="1" pin="2"/>
 <wire x1="172.72" y1="106.68" x2="172.72" y2="99.06" width="0.1524" layer="91"/>
 <label x="172.72" y="99.06" size="1.778" layer="95" rot="R180"/>
 </segment>
@@ -9037,7 +9037,7 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <label x="93.98" y="17.78" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="DHT1" gate="G$1" pin="2"/>
+<pinref part="BUTTONS" gate="G$1" pin="2"/>
 <wire x1="172.72" y1="58.42" x2="172.72" y2="60.96" width="0.1524" layer="91"/>
 <label x="172.72" y="60.96" size="1.778" layer="95" rot="R90"/>
 </segment>
@@ -9049,7 +9049,7 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <label x="93.98" y="15.24" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="DHT1" gate="G$1" pin="1"/>
+<pinref part="BUTTONS" gate="G$1" pin="1"/>
 <wire x1="175.26" y1="58.42" x2="175.26" y2="60.96" width="0.1524" layer="91"/>
 <label x="175.26" y="60.96" size="1.778" layer="95" rot="R90"/>
 </segment>
